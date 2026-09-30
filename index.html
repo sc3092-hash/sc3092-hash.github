@@ -1,208 +1,636 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Portfolio</title>
-  <style>
-    :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --tag-bg: #e0e7ff;
-      --tag-text: #3730a3;
-      --border: #e2e8f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Your Name | Rutgers Portfolio</title>
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
+    <style>
+        /* =========================
+           GENERAL STYLING
+           ========================= */
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .statement {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      max-width: 650px;
-      margin: 0 auto;
-    }
+        /* =========================
+           NAVIGATION BAR
+           ========================= */
 
-    section {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
+        nav {
+            background-color: #cc0033;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--text-main);
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.5rem;
-    }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    /* Skills Styling */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-    }
+        .logo span {
+            color: #ffffff;
+        }
 
-    .skills-list li {
-      background-color: var(--tag-bg);
-      color: var(--tag-text);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-    /* Projects Styling */
-    .project-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      background-color: #fafafa;
-    }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
 
-    .project-card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
+        /* =========================
+           HERO / INTRODUCTION
+           ========================= */
 
-    .project-card p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
+        .hero {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.65),
+                rgba(0, 0, 0, 0.65)
+            ),
+            url("https://upload.wikimedia.org/wikipedia/commons/7/7d/Old_Queens_Rutgers_University.jpg");
 
-    .project-links {
-      display: flex;
-      gap: 1rem;
-    }
+            background-size: cover;
+            background-position: center;
 
-    .project-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+            min-height: 500px;
 
-    .project-links a:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
-    }
-  </style>
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffcc00;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #cc0033;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #a8002a;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           GENERAL SECTION STYLING
+           ========================= */
+
+        section {
+            padding: 70px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #cc0033;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* =========================
+           PERSONAL STATEMENT
+           ========================= */
+
+        #about {
+            background-color: white;
+        }
+
+        .statement {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            color: #444;
+            padding: 30px;
+            border-left: 6px solid #cc0033;
+            border-right: 6px solid #cc0033;
+            background-color: #fafafa;
+        }
+
+        /* =========================
+           SKILLS
+           ========================= */
+
+        #skills {
+            background-color: #f5f5f5;
+        }
+
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            border-top: 5px solid #cc0033;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill h3 {
+            color: #cc0033;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           PROJECTS
+           ========================= */
+
+        #projects {
+            background-color: white;
+        }
+
+        .projects-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            background-color: #cc0033;
+            color: white;
+            padding: 20px;
+        }
+
+        .project-header h3 {
+            font-size: 22px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            background-color: #cc0033;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .project-links a:hover {
+            background-color: #a8002a;
+        }
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+
+            .statement {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="container">
-    
-    <!-- Header / Personal Statement -->
-    <header>
-      <h1>Your Name</h1>
-      <p class="statement">
-        Driven Full-Stack Developer specializing in building scalable web applications and delivering seamless, user-centric digital experiences.
-      </p>
-    </header>
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
 
-    <!-- Skills Section -->
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>JavaScript (ES6+)</li>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>HTML5 & CSS3</li>
-        <li>Python</li>
-        <li>Git & GitHub</li>
-        <li>REST APIs</li>
-        <li>SQL / PostgreSQL</li>
-      </ul>
-    </section>
+    <nav>
 
-    <!-- Projects Section -->
-    <section>
-      <h2>Projects</h2>
-      <div class="project-grid">
+        <!-- CHANGE YOUR NAME HERE -->
+        <div class="logo">
+            RUTGERS | YOUR NAME
+        </div>
 
-        <!-- Project 1 -->
-        <article class="project-card">
-          <h3>E-Commerce Web Application</h3>
-          <p>
-            A full-featured online storefront built with React and Node.js featuring product filtering, cart functionality, and integrated payment processing.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener">Source Code</a>
-            <a href="https://your-demo-url.com" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
 
-        <!-- Project 2 -->
-        <article class="project-card">
-          <h3>Task Management Dashboard</h3>
-          <p>
-            A real-time productivity tool allowing users to create, organize, and track personal tasks with customizable kanban boards.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener">Source Code</a>
-            <a href="https://your-demo-url.com" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
+    </nav>
 
-        <!-- Project 3 -->
-        <article class="project-card">
-          <h3>Weather Forecast App</h3>
-          <p>
-            A responsive web app fetching real-time weather data and 5-day forecasts using a third-party REST API and geolocation.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener">Source Code</a>
-            <a href="https://your-demo-url.com" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
 
-      </div>
-    </section>
+    <!-- =========================
+         HERO SECTION
+         ========================= -->
 
-  </div>
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <!-- CHANGE YOUR NAME -->
+            <h1>Hello, I'm <span>Your Name</span></h1>
+
+            <!-- CHANGE THIS -->
+            <p>
+                Rutgers University Student | Technology & Data Enthusiast
+            </p>
+
+            <a href="#projects" class="button">
+                View My Projects
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         1. PERSONAL STATEMENT
+         ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+            <h2>Personal Statement</h2>
+            <p>A little about me</p>
+        </div>
+
+        <div class="statement">
+
+            <!--
+                REPLACE THIS WITH YOUR ONE-SENTENCE
+                PROFESSIONAL INTRODUCTION
+            -->
+
+            I am a Rutgers University student passionate about technology, data, and problem-solving, with experience supporting users and developing practical technical solutions.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         2. SKILLS
+         ========================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>Skills</h2>
+
+            <p>
+                Technical and professional skills
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <!-- CHANGE OR ADD SKILLS -->
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Programming & Web Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>Excel</h3>
+                <p>Data Analysis & Reporting</p>
+            </div>
+
+            <div class="skill">
+                <h3>ServiceNow</h3>
+                <p>IT Ticketing & Support</p>
+            </div>
+
+            <div class="skill">
+                <h3>Data Analysis</h3>
+                <p>Data Organization & Interpretation</p>
+            </div>
+
+            <div class="skill">
+                <h3>Problem Solving</h3>
+                <p>Technical Troubleshooting</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         3. PROJECTS
+         ========================= -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>Projects</h2>
+
+            <p>
+                Selected academic and personal projects
+            </p>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-header">
+                    <h3>Project 1: Portfolio Website</h3>
+                </div>
+
+                <div class="project-content">
+
+                    <p>
+                        Designed and developed a personal portfolio website
+                        using HTML and CSS to showcase my skills, projects,
+                        and professional experience.
+                    </p>
+
+                    <div class="project-links">
+
+                        <!-- REPLACE # WITH YOUR GITHUB LINK -->
+
+                        <a href="#" target="_blank">
+                            GitHub
+                        </a>
+
+                        <!-- REPLACE # WITH YOUR LIVE WEBSITE -->
+
+                        <a href="#" target="_blank">
+                            Live Demo
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <div class="project-header">
+                    <h3>Project 2: Data Analysis Project</h3>
+                </div>
+
+                <div class="project-content">
+
+                    <p>
+                        Analyzed and organized a dataset using Excel to
+                        identify trends, calculate key statistics, and
+                        present findings through tables and visualizations.
+                    </p>
+
+                    <div class="project-links">
+
+                        <!-- REPLACE # WITH YOUR GITHUB LINK -->
+
+                        <a href="#" target="_blank">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <div class="project-header">
+                    <h3>Project 3: JavaScript Application</h3>
+                </div>
+
+                <div class="project-content">
+
+                    <p>
+                        Developed a JavaScript application using arrays,
+                        functions, loops, and conditional statements to
+                        solve a practical programming problem.
+                    </p>
+
+                    <div class="project-links">
+
+                        <!-- REPLACE # WITH YOUR GITHUB LINK -->
+
+                        <a href="#" target="_blank">
+                            GitHub
+                        </a>
+
+                        <!-- REPLACE # WITH YOUR LIVE WEBSITE -->
+
+                        <a href="#" target="_blank">
+                            Live Demo
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <!-- CHANGE YOUR NAME -->
+
+        <p>
+            © 2026 Your Name
+        </p>
+
+        <p>
+            Rutgers University
+        </p>
+
+        <p>
+
+            <!-- CHANGE THIS TO YOUR GITHUB -->
+
+            <a href="#" target="_blank">
+                GitHub
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <!-- CHANGE THIS TO YOUR LINKEDIN -->
+
+            <a href="#" target="_blank">
+                LinkedIn
+            </a>
+
+        </p>
+
+    </footer>
 
 </body>
 </html>
