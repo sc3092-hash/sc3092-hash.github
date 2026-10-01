@@ -1,209 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shreshta Charipally - Portfolio</title>
-  <style>
-    :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --tag-bg: #e0e7ff;
-      --tag-text: #3730a3;
-      --border: #e2e8f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Portfolio</title>
+    <style>
+        /* Reset and general styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
 
-    .statement {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      max-width: 650px;
-      margin: 0 auto;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a73e8;
+        }
 
-    section {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--text-main);
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.5rem;
-    }
+        .nav-links li {
+            margin-left: 20px;
+        }
 
-    /* Skills Styling */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-    }
+        .nav-links a:hover {
+            color: #1a73e8;
+        }
 
-    .skills-list li {
-      background-color: var(--tag-bg);
-      color: var(--tag-text);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
+        /* Hero Section */
+        .hero {
+            background-color: #1a73e8;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
 
-    /* Projects Styling */
-    .project-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
 
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      background-color: #fafafa;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    .project-card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #1a73e8;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
 
-    .project-card p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
+        .btn:hover {
+            background: #e0e0e0;
+        }
 
-    .project-links {
-      display: flex;
-      gap: 1rem;
-    }
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
 
-    .project-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #222;
+        }
 
-    .project-links a:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
-    }
-  </style>
+        /* Services Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background: #1557b0;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <!-- Header / Personal Statement -->
-    <header>
-      <h1>Shreshta</h1>
-      <p class="statement">
-        Hello, my name is Shreshta Charipally and I am a freshman at Rutgers University pursuing a degree in Supply Chain Management and Business Analytics & Information Technology. I am eager to apply my passion for sustainability with my skills in problem solving and analytical thinking through internships and professional opportunities.
-Feel free to reach out to my email: shreshtacharipally@gmail.com.
-      </p>
-    </header>
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Company Name</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Skills Section -->
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>JavaScript (ES6+)</li>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>HTML5 & CSS3</li>
-        <li>Python</li>
-        <li>Git & GitHub</li>
-        <li>REST APIs</li>
-        <li>SQL / PostgreSQL</li>
-      </ul>
-    </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Driving Innovation & Digital Solutions</h1>
+            <p>We build tailored solutions that help your business grow and thrive in a modern marketplace.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
 
-    <!-- Projects Section -->
-    <section>
-      <h2>Projects</h2>
-      <div class="project-grid">
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Us</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">
+            We are a team of dedicated professionals providing high-quality digital solutions to organizations worldwide. 
+            With expertise spanning design, technology, and strategic planning, we deliver reliable results crafted for impact.
+        </p>
+    </section>
 
-        <!-- Project 1 -->
-        <article class="project-card">
-          <h3>E-Commerce Web Application</h3>
-          <p>
-            A full-featured online storefront built with React and Node.js featuring product filtering, cart functionality, and integrated payment processing.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener">Source Code</a>
-            <a href="https://your-demo-url.com" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
+    <!-- Services Section -->
+    <section id="services" style="background-color: #ffffff;">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Responsive, fast, and accessible websites tailored to your brand identity and audience.</p>
+                </div>
+                <div class="card">
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic online marketing campaigns designed to expand reach and convert prospective clients.</p>
+                </div>
+                <div class="card">
+                    <h3>Consulting</h3>
+                    <p>Expert insights to streamline operational workflows and modernize digital operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Project 2 -->
-        <article class="project-card">
-          <h3>Task Management Dashboard</h3>
-          <p>
-            A real-time productivity tool allowing users to create, organize, and track personal tasks with customizable kanban boards.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener">Source Code</a>
-            <a href="https://your-demo-url.com" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="grid-3">
+            <div class="portfolio-item">
+                <div class="portfolio-img">Project Thumbnail</div>
+                <div class="portfolio-info">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Custom online shop built to support high transaction volumes seamlessly.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Project Thumbnail</div>
+                <div class="portfolio-info">
+                    <h3>Corporate Website</h3>
+                    <p>Full redesign highlighting brand authority and client service offerings.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Project Thumbnail</div>
+                <div class="portfolio-info">
+                    <h3>Analytics Dashboard</h3>
+                    <p>Custom web dashboard enabling real-time business performance tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Project 3 -->
-        <article class="project-card">
-          <h3>Weather Forecast App</h3>
-          <p>
-            A responsive web app fetching real-time weather data and 5-day forecasts using a third-party REST API and geolocation.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener">Source Code</a>
-            <a href="https://your-demo-url.com" target="_blank" rel="noopener">Live Demo</a>
-          </div>
-        </article>
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #ffffff;">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-      </div>
-    </section>
-
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Company Name. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
